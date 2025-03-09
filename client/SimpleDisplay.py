@@ -24,6 +24,10 @@ class Player(pygame.sprite.Sprite):
         self.rect.x = self.rect.x + self.change_x
         self.rect.y = self.rect.y + self.change_y
 
+    def get_data(self) -> str:
+        return "{x: " + str(self.rect.x) + ", y: " + str(self.rect.y) + "}"
+
+
 class SimpleDisplay(Thread):
     def __init__(self) -> None:
         super(SimpleDisplay, self).__init__()

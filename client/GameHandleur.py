@@ -29,7 +29,7 @@ class GameHandleur(Thread):
                     self.display.upd_entitie(key, data[key])
 
             if len(self.display.entities) >= 1 :
-                self.network.send_message("{x: " + str(self.display.entities[0].rect.x) + ", y: " + str(self.display.entities[0].rect.y) + "}")
+                self.network.send_message(self.display.entities[0].get_data())
 
             self.network.recv_data = ""
 
